@@ -101,14 +101,14 @@ class _ScanStockScreenState extends State<ScanStockScreen>
 
     if (duplicateInOtherProduct) {
       _snController.clear();
-      _showAlert('⚠️ SN ซ้ำ', 'SN นี้ถูกสแกนแล้วในสินค้ารายการอื่น');
+      _showAlert(' SN ซ้ำ', 'SN นี้ถูกสแกนแล้วในสินค้ารายการอื่น');
       return;
     }
 
     // เช็กว่า SN นี้มีในสินค้านี้แล้ว
     if (scannedSNs.contains(sn)) {
       _snController.clear();
-      _showAlert('⚠️ SN ซ้ำ', 'SN นี้ถูกสแกนไปแล้ว');
+      _showAlert(' SN ซ้ำ', 'SN นี้ถูกสแกนไปแล้ว');
       return;
     }
 
@@ -130,7 +130,7 @@ class _ScanStockScreenState extends State<ScanStockScreen>
       });
     } else {
       _snController.clear();
-      _showAlert('❌ ผิดพลาด', result['message'] ?? 'ไม่สามารถสแกนได้');
+      _showAlert('ผิดพลาด', result['message'] ?? 'ไม่สามารถสแกนได้');
     }
   }
 
@@ -148,7 +148,7 @@ class _ScanStockScreenState extends State<ScanStockScreen>
       await _loadScannedSNs();
       _showAlert('ลบสำเร็จ', 'ลบ SN เรียบร้อยแล้ว');
     } else {
-      _showAlert('❌ ผิดพลาด', result['message'] ?? 'ไม่สามารถลบได้');
+      _showAlert(' ผิดพลาด', result['message'] ?? 'ไม่สามารถลบได้');
     }
 
     setState(() => isLoading = false);
@@ -511,7 +511,6 @@ class _ScanStockScreenState extends State<ScanStockScreen>
       ],
     );
   }
-
 
   Widget _buildScannedList() {
     return Container(

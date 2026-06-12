@@ -345,7 +345,7 @@ class _ScanProductIdScreenState extends State<ScanProductIdScreen> {
     } catch (_) {
       if (mounted) {
         _showProductAlertDialog(
-          title: ' ผิดพลาด',
+          title: ' เกิดผิดพลาด',
           message: 'ไม่พบสถานที่ในระบบ',
           autoClose: true,
           icon: Icons.error_outline,
